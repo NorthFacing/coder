@@ -20,13 +20,7 @@ Generate java code by your own models. Get all the code you wanted only by one c
 2. Only MySQL is supported right now.
 
 ## Reference
-<<<<<<< HEAD
 This project is come from the project below, only change the configuration to the configuration property file.
 
 [bigcong](https://github.com/bigcong) / [coder](https://github.com/bigcong/coder "代码生成器")
-=======
-    This project is come from the project below, only change the configuration to the configuration property file.
-
-    [bigcong](https://github.com/bigcong) / [coder](https://github.com/bigcong/coder "代码生成器")
->>>>>>> fa42aa7c88e49bea8a6703bb4f45d42545cab2c7
 
