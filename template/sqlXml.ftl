@@ -3,7 +3,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="${packageName}.mapper.${className_d}Mapper">
+<mapper namespace="${packageName}.${className_x}.mapper.${className_d}Mapper">
 	
 	<resultMap id="${className_d}Map" type="${packageName}.model.${className_d}">
 		<#list tableCarrays as tableCarray>
