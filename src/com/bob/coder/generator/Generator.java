@@ -40,23 +40,23 @@ public class Generator {
         Configuration configuration = FileWriterFactory.getConfiguration(GeneratorCfg.templatePath);
 
         for (Table table : tables) {
+            if (GeneratorCfg.sqlXml) {
+                buildFactory(table, configuration, FileWriterFactory.SQLXML);
+            }
             if (GeneratorCfg.model) {
                 buildFactory(table, configuration, FileWriterFactory.MODEL);
             }
-            if (GeneratorCfg.controller) {
-                buildFactory(table, configuration, FileWriterFactory.CONTROLLER);
-            }
             if (GeneratorCfg.mapper) {
                 buildFactory(table, configuration, FileWriterFactory.MAPPER);
-            }
-            if (GeneratorCfg.sqlXml) {
-                buildFactory(table, configuration, FileWriterFactory.SQLXML);
             }
             if (GeneratorCfg.service) {
                 buildFactory(table, configuration, FileWriterFactory.SERVICE);
             }
             if (GeneratorCfg.serviceImpl) {
                 buildFactory(table, configuration, FileWriterFactory.SERVICE_IMPL);
+            }
+            if (GeneratorCfg.controller) {
+                buildFactory(table, configuration, FileWriterFactory.CONTROLLER);
             }
             if (GeneratorCfg.editPage) {
                 buildFactory(table, configuration, FileWriterFactory.EDITPAGE);

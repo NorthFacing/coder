@@ -10,7 +10,7 @@ package com.bob.coder.generator;
 public class GeneratorCfg {
 
     public static String[] tableNames;
-    public static String packageName = "com.bob";
+    public static String packageName = "com.bob.biz";
     public static String templatePath = "template/";
     public static String outPutPath = "D:/outPut";
 
