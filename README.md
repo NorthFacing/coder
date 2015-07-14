@@ -13,7 +13,9 @@ Generate java code by your own models. Get all the code you wanted only by one c
 2. Replace the dateSource configuration by your own account.
 3. Specify the table you to generate the java code, if you don't, then all the table of the dataSource will be generated.
 4. Run the main method of com.Build.
-5. Check the output files in the path - "D:\outPut", or someWhere else you modified.
+5. Now you will get all the code you nedd in the output files path - "D:\outPut", or someWhere else you modified.
+
+Enjoy it ~
 
 ## Note
 1. This project does not dependencies any JAR, except Java SE Development Kit (JDK).
