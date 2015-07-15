@@ -1,7 +1,7 @@
-# coder
+# Coder
 Generate java code by your own models. Get all the code you wanted only by one click!
 
-## project structure 
+## Project structure 
 * src
 * config
 * template
@@ -17,7 +17,7 @@ Generate java code by your own models. Get all the code you wanted only by one c
 
 Enjoy it ~
 
-## Note
+## Remarks
 1. This project does not dependencies any JAR, except Java SE Development Kit (JDK).
 2. Only MySQL is supported right now.
 
