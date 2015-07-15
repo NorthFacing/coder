@@ -1,7 +1,7 @@
-# coder
+# Coder
 Generate java code by your own models. Get all the code you wanted only by one click!
 
-## project structure 
+## Project structure 
 * src
 * config
 * template
