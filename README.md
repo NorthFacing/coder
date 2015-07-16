@@ -21,8 +21,3 @@ Enjoy it ~
 1. This project does not dependencies any JAR, except Java SE Development Kit (JDK).
 2. Only MySQL is supported right now.
 
-## Reference
-This project is come from the project below, only change the configuration to the configuration property file.
-
-[bigcong](https://github.com/bigcong) / [coder](https://github.com/bigcong/coder "代码生成器")
-

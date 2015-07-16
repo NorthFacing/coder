@@ -44,6 +44,7 @@ public class ParseConfig {
         GeneratorCfg.listPage = Boolean.parseBoolean((String) ppt.get("listPage"));
         GeneratorCfg.viewPage = Boolean.parseBoolean((String) ppt.get("viewPage"));
 
+        GeneratorCfg.localDateTime = Boolean.parseBoolean((String) ppt.get("localDateTime"));
     }
 
     public static Properties readConfig(String filePath) {

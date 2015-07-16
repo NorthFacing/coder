@@ -29,4 +29,5 @@ public class GeneratorCfg {
     public static boolean viewPage;
     public static boolean listPage;
 
+    public static boolean localDateTime;
 }

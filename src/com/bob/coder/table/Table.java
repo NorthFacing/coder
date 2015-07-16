@@ -26,6 +26,7 @@ public class Table {
     private List<TableBind> tableBinds;// 表主外键
 
     private Set<String> importPojos;// 需要导入的POJO
+    private Set<String> importJARs;// 需要导入的JAR
 
     private String stringCarrayNames1;// ","拼接大写字段
     private String stringCarrayNames2;// int id ,String userCord ,..
@@ -39,8 +40,9 @@ public class Table {
 
     public Table(String className, String classNameD, String classNameX, String packageName,
         List<TableCarray> tableCarrays, List<TableIndex> tableIndexs, List<TableBind> tableBinds,
-        Set<String> importPojos, String stringCarrayNames1, String stringCarrayNames2, String stringCarrayNames3,
-        String stringCarrayNames4, String stringCarrayNames5, String stringCarrayNames6, String stringCarrayNames7) {
+        Set<String> importPojos, Set<String> importJARs, String stringCarrayNames1, String stringCarrayNames2,
+        String stringCarrayNames3, String stringCarrayNames4, String stringCarrayNames5, String stringCarrayNames6,
+        String stringCarrayNames7) {
         super();
         this.className = className;
         className_d = classNameD;
@@ -50,6 +52,7 @@ public class Table {
         this.tableIndexs = tableIndexs;
         this.tableBinds = tableBinds;
         this.importPojos = importPojos;
+        this.importJARs = importJARs;
         this.stringCarrayNames1 = stringCarrayNames1;
         this.stringCarrayNames2 = stringCarrayNames2;
         this.stringCarrayNames3 = stringCarrayNames3;
@@ -138,6 +141,14 @@ public class Table {
 
     public void setImportPojos(Set<String> importPojos) {
         this.importPojos = importPojos;
+    }
+
+    public Set<String> getImportJARs() {
+        return importJARs;
+    }
+
+    public void setImportJARs(Set<String> importJARs) {
+        this.importJARs = importJARs;
     }
 
     public String getStringCarrayNames1() {
