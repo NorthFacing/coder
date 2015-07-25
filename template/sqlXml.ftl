@@ -17,7 +17,7 @@
 		</#list>
 	</sql>
 
-	<select id="select" parameterType="${packageName}.${className_x}.model.${className_d}Vo"
+	<select id="getList" parameterType="${packageName}.${className_x}.model.${className_d}Vo"
 		resultMap="BaseResultMap">
 		select
 		<include refid="baseColumn"></include>
