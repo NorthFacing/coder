@@ -9,11 +9,15 @@
 		</#list>
 	</resultMap>
 	
-	<sql id="tabaleName">${className_x}</sql>
+	<sql id="tabaleName"> ${className_x} t </sql>
 
 	<sql id="baseColumn">
 		<#list tableCarrays as tableCarray>
-		   ${tableCarray.carrayName},
+			<#if tableCarray_has_next>
+				t.${tableCarray.carrayName},
+	        <#else>
+				t.${tableCarray.carrayName}
+			</#if>
 		</#list>
 	</sql>
 
@@ -25,12 +29,11 @@
 		<include refid="tabaleName"></include>
 		<where>
 			<#list tableCarrays as tableCarray>
-				<if test=" ${tableCarray.carrayName_x}!=null and ${tableCarray.carrayName_x}!='' ">
-					and ${tableCarray.carrayName} = ${tableCarray.carrayName_x}
+				<if test=" ${tableCarray.carrayName_x} !=null and ${tableCarray.carrayName_x} !='' ">
+					and t.${tableCarray.carrayName} = ${tableCarray.carrayName_x}
 				</if>
 			</#list>
 		</where>
-
 	</select>
 	
 </mapper>
