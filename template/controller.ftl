@@ -31,7 +31,7 @@ public class ${className_d}Controller extends BaseController {
 
     @ResponseBody
     @RequestMapping(value = "/${className_x}/edit", method = RequestMethod.POST)
-    public AjaxResults<?> add(@Validated ${className_d} ${className_x}) {
+    public AjaxResults<?> edit(@Validated ${className_d} ${className_x}) {
         ${className_x}Service.edit(${className_x});
         return AjaxResults.success();
     }
@@ -56,7 +56,7 @@ public class ${className_d}Controller extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/${className_x}/getPage", method = RequestMethod.POST)
     public AjaxResults<PageInfo<?>> getPage(${className_d}Vo ${className_x}Vo) {
-	    PageInfo<Hotel> pageInfo = ${className_x}Service.getPage(${className_x}Vo.getPage(), ${className_x}Vo.getRows(), ${className_x});
+	    PageInfo<${className_d}> pageInfo = ${className_x}Service.getPage(${className_x}Vo.getPage(), ${className_x}Vo.getRows(), ${className_x}Vo);
         return new AjaxResults<PageInfo<?>>(pageInfo);
     }
 
