@@ -8,7 +8,7 @@ import ${packageName}.${className_x}.service.${className_d}Service;
 import com.mall.core.base.service.impl.BaseServiceImpl;
 
 /**
- * ${className}ServiceImpl
+ * ${className_d}ServiceImpl
  * @since v0.0.1
  * @author Bob
  * @Date ${.now}

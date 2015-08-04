@@ -9,7 +9,7 @@
 		</#list>
 	</resultMap>
 	
-	<sql id="tabaleName"> ${className_x} t </sql>
+	<sql id="tabaleName">${className_x} as t</sql>
 
 	<sql id="baseColumn">
 		<#list tableCarrays as tableCarray>

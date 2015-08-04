@@ -5,7 +5,7 @@ import ${packageName}.${className_x}.model.${className_d}Vo;
 import com.mall.core.base.service.BaseService;
 
 /**
- * ${className}Service
+ * ${className_d}Service
  * @since v0.0.1
  * @author Bob
  * @Date ${.now}

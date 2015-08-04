@@ -3,7 +3,7 @@ package ${packageName}.${className_x}.model;
 import com.mall.core.base.model.BaseModel;
 
 /**
- * ${className}
+ * ${className_d}Vo
  * @since v0.0.1
  * @author Bob
  * @Date ${.now}

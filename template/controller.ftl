@@ -18,7 +18,7 @@ import ${packageName}.${className_x}.model.${className_d}Vo;
 import ${packageName}.${className_x}.service.${className_d}Service;
 
 /**
- * ${className}Controller
+ * ${className_d}Controller
  * @since v0.0.1
  * @author Bob
  * @Date ${.now}
@@ -30,9 +30,9 @@ public class ${className_d}Controller extends BaseController {
     private ${className_d}Service ${className_x}Service;
 
     @ResponseBody
-    @RequestMapping(value = "/${className_x}/edit", method = RequestMethod.POST)
-    public AjaxResults<?> edit(@Validated ${className_d} ${className_x}) {
-        ${className_x}Service.edit(${className_x});
+    @RequestMapping(value = "/${className_x}/save", method = RequestMethod.POST)
+    public AjaxResults<?> save(@Validated ${className_d} ${className_x}) {
+        ${className_x}Service.save(${className_x});
         return AjaxResults.success();
     }
 
