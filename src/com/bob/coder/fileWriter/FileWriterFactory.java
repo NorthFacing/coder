@@ -1,67 +1,37 @@
 package com.bob.coder.fileWriter;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-
 import com.bob.coder.generator.GeneratorCfg;
 import com.bob.coder.table.Table;
 import com.bob.coder.util.DirMaker;
-
 import freemarker.template.Configuration;
 import freemarker.template.DefaultObjectWrapper;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
+import java.io.*;
+
 /**
- * 
  * @author jlon
- *
  */
 public class FileWriterFactory {
 
     private static Configuration cfg;
-    /**
-     * 
-     */
     public static final int SQLXML = 1;
-    /**
-	 * 
-	 */
     public static final int MODEL = 2;
-    /**
-	 * 
-	 */
-    public static final int MAPPER = 3;
-    /**
-	 * 
-	 */
-    public static final int SERVICE = 4;
-    /**
-	 * 
-	 */
-    public static final int SERVICE_IMPL = 5;
-    /**
-	 * 
-	 */
-    public static final int LISTPAGE = 6;
+    public static final int MODELVO = 3;
+    public static final int DAO = 4;
+    public static final int DAOIMPL = 5;
+    public static final int SERVICE = 6;
+    public static final int SERVICEIMPL = 7;
+    public static final int CONTROLLER = 8;
+    public static final int LISTPAGE = 9;
+    public static final int EDITPAGE = 10;
+    public static final int VIEWPAGE = 11;
 
-    public static final int EDITPAGE = 7;
-
-    public static final int VIEWPAGE = 8;
-
-    public static final int CONTROLLER = 9;
-
-    /**
-     * @param url
-     * @return
-     */
     public static Configuration getConfiguration(String url) {
         if (cfg == null) {
             cfg = new Configuration();
-            url = System.getProperty("user.dir") + "/" + url;
+            url = System.getProperty("user.dir") + File.separator + "coder" + File.separator + url;
 
             System.out.println(url);
             File file = new File(url);
@@ -75,17 +45,6 @@ public class FileWriterFactory {
         return cfg;
     }
 
-    /**
-     * 
-     * @param cfg
-     *        解析对象
-     * @param templateName
-     *        模板名称
-     * @param root
-     *        数据对象 包名称
-     * @param fileName
-     *        生成文件名称
-     */
     public static void dataSourceOut(Configuration cfg, String templateName, Table table, int type) {
         String fileName = null;
         Template temp = null;
@@ -99,42 +58,50 @@ public class FileWriterFactory {
         try {
             String packageName = table.getPackageName() + "." + table.getClassName_x();
             switch (type) {
-            case MODEL:
-                fileName = ".java";
-                packageName += ".model";
-                break;
-            case CONTROLLER:
-                fileName = "Controller" + ".java";
-                packageName += ".controller";
-                break;
-            case MAPPER:
-                fileName = "Mapper" + ".java";
-                packageName += ".mapper";
-                break;
-            case SERVICE:
-                fileName = "Service" + ".java";
-                packageName += ".service";
-                break;
-            case SERVICE_IMPL:
-                fileName = "ServiceImpl" + ".java";
-                packageName += ".service.impl";
-                break;
-            case SQLXML:
-                fileName = "Mapper" + ".xml";
-                packageName += ".mapper";
-                break;
-            case LISTPAGE:
-                fileName = "List.jsp";
-                packageName = ".jsp." + table.getClassName_x();
-                break;
-            case EDITPAGE:
-                fileName = "edit.jsp";
-                packageName = ".jsp." + table.getClassName_x();
-                break;
-            case VIEWPAGE:
-                fileName = "View.jsp";
-                packageName = ".jsp." + table.getClassName_x();
-                break;
+                case SQLXML:
+                    fileName = "Mapper.xml";
+                    packageName += ".mapper";
+                    break;
+                case MODEL:
+                    fileName = ".java";
+                    packageName += ".model";
+                    break;
+                case MODELVO:
+                    fileName = "Vo.java";
+                    packageName += ".model";
+                    break;
+                case DAO:
+                    fileName = "Dao" + ".java";
+                    packageName += ".dao";
+                    break;
+                case DAOIMPL:
+                    fileName = "DaoImpl" + ".java";
+                    packageName += ".dao.impl";
+                    break;
+                case SERVICE:
+                    fileName = "Manager" + ".java";
+                    packageName += ".manager";
+                    break;
+                case SERVICEIMPL:
+                    fileName = "ManagerImpl" + ".java";
+                    packageName += ".manager.impl";
+                    break;
+                case CONTROLLER:
+                    fileName = "Controller" + ".java";
+                    packageName += ".controller";
+                    break;
+                case LISTPAGE:
+                    fileName = "List.jsp";
+                    packageName = ".jsp." + table.getClassName_x();
+                    break;
+                case EDITPAGE:
+                    fileName = "edit.jsp";
+                    packageName = ".jsp." + table.getClassName_x();
+                    break;
+                case VIEWPAGE:
+                    fileName = "View.jsp";
+                    packageName = ".jsp." + table.getClassName_x();
+                    break;
             }
             packageName = packageName.replace(".", "/");
 

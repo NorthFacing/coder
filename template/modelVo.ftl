@@ -1,27 +1,11 @@
-package ${packageName}.${className_x}.model;
+package com.yuantu.domain;
 
-import com.mall.core.base.model.BaseModel;
+import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 
-/**
- * ${className_d}Vo
- * @since v0.0.1
- * @author Bob
- * @Date ${.now}
- */
-public class ${className_d}Vo  extends BaseModel {
+public class ${className_d}VO extends ${className_d}DO {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("${className_d}");
-        sb.append(" [ ");
-		<#list tableCarrays as tableCarray>
-		<#if tableCarray_has_next>
-        sb.append("${tableCarray.carrayName_x}=").append(this.${tableCarray.carrayName_x}).append(", ");
-        <#else>
-        sb.append("${tableCarray.carrayName_x}=").append(this.${tableCarray.carrayName_x});
-		</#if>
-		</#list>
-        sb.append(" ]");
-        return sb.toString();
+        return ReflectionToStringBuilder.toString(this);
     }
 }

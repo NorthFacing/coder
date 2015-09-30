@@ -1,23 +1,23 @@
 package com.bob.coder.util;
 
+import com.bob.coder.generator.GeneratorCfg;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-import com.bob.coder.generator.GeneratorCfg;
-
 /**
  * 配置解析
- * 
- * @since v0.0.1
+ *
  * @author Bob
  * @created 2015年7月14日 下午5:42:47
+ * @since v0.0.1
  */
 public class ParseConfig {
 
-    static String filePath = System.getProperty("user.dir") + File.separator + "config" + File.separator
-        + "config.properties";
+    static String filePath = System.getProperty("user.dir") + File.separator + "coder" + File.separator + "config" + File.separator
+            + "config.properties";
 
     public static void setcfg() {
         Properties ppt = readConfig(filePath);
@@ -35,8 +35,10 @@ public class ParseConfig {
         GeneratorCfg.dbPassWord = (String) ppt.get("dbPassWord");
 
         GeneratorCfg.sqlXml = Boolean.parseBoolean((String) ppt.get("sqlXml"));
-        GeneratorCfg.mapper = Boolean.parseBoolean((String) ppt.get("mapper"));
         GeneratorCfg.model = Boolean.parseBoolean((String) ppt.get("model"));
+        GeneratorCfg.modelVo = Boolean.parseBoolean((String) ppt.get("modelVo"));
+        GeneratorCfg.dao = Boolean.parseBoolean((String) ppt.get("dao"));
+        GeneratorCfg.daoImpl = Boolean.parseBoolean((String) ppt.get("daoImpl"));
         GeneratorCfg.service = Boolean.parseBoolean((String) ppt.get("service"));
         GeneratorCfg.serviceImpl = Boolean.parseBoolean((String) ppt.get("serviceImpl"));
         GeneratorCfg.controller = Boolean.parseBoolean((String) ppt.get("controller"));

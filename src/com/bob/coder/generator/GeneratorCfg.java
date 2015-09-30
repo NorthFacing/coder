@@ -20,8 +20,10 @@ public class GeneratorCfg {
     public static String dbPassWord;
 
     public static boolean sqlXml;
-    public static boolean mapper;
     public static boolean model;
+    public static boolean modelVo;
+    public static boolean dao;
+    public static boolean daoImpl;
     public static boolean service;
     public static boolean serviceImpl;
     public static boolean controller;

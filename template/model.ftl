@@ -7,12 +7,6 @@ import ${importJAR};
 
 import com.mall.core.base.model.BaseModel;
 
-/**
- * ${className_d}
- * @since v0.0.1
- * @author Bob
- * @Date ${.now}
- */
 public class ${className_d}  extends BaseModel {
 
     <#--======================================== 列出所有的字段  ========================================-->
@@ -46,18 +40,8 @@ public class ${className_d}  extends BaseModel {
 	</#if>
 	</#list>
 	
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder("${className_d}");
-        sb.append(" [ ");
-		<#list tableCarrays as tableCarray>
-		<#if tableCarray_has_next>
-        sb.append("${tableCarray.carrayName_x}=").append(this.${tableCarray.carrayName_x}).append(", ");
-        <#else>
-        sb.append("${tableCarray.carrayName_x}=").append(this.${tableCarray.carrayName_x});
-		</#if>
-		</#list>
-        sb.append(" ]");
-        return sb.toString();
-    }
+@Override
+public String toString() {
+return ReflectionToStringBuilder.toString(this);
+}
 }
