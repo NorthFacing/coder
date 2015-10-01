@@ -1,24 +1,13 @@
 package com.bob.coder.util;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import com.bob.coder.generator.GeneratorCfg;
+import com.bob.coder.generator.Config;
 import com.bob.coder.table.Table;
 import com.bob.coder.table.TableBind;
 import com.bob.coder.table.TableCarray;
 import com.bob.coder.table.TableIndex;
+
+import java.sql.*;
+import java.util.*;
 
 @SuppressWarnings("all")
 public class TableUtil {
@@ -412,7 +401,7 @@ public class TableUtil {
                 carrayType = "Integer";
             }
             if (carrayType.equals("java.util.Date")) {
-                if (GeneratorCfg.localDateTime) {
+                if (Config.localDateTime) {
                     carrayType = "LocalDateTime";
                     importedJARs.add("java.time.LocalDateTime");
                 } else {

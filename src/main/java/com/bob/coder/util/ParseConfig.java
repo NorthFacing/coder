@@ -1,6 +1,6 @@
 package com.bob.coder.util;
 
-import com.bob.coder.generator.GeneratorCfg;
+import com.bob.coder.generator.Config;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -25,30 +25,30 @@ public class ParseConfig {
         Properties ppt = readConfig(filePath);
         Object tableNames = ppt.get("tableNames");
         if (tableNames != null && !tableNames.equals("")) {
-            GeneratorCfg.tableNames = ((String) tableNames).split(",");
+            Config.tableNames = ((String) tableNames).split(",");
         }
-        GeneratorCfg.packageName = (String) ppt.get("packageName");
-        GeneratorCfg.templatePath = (String) ppt.get("templatePath");
-        GeneratorCfg.outPutPath = (String) ppt.get("outPutPath");
+        Config.packageName = (String) ppt.get("packageName");
+        Config.templatePath = (String) ppt.get("templatePath");
+        Config.outPutPath = (String) ppt.get("outPutPath");
 
-        GeneratorCfg.dbDriver = (String) ppt.get("dbDriver");
-        GeneratorCfg.dbURL = (String) ppt.get("dbURL");
-        GeneratorCfg.dbUserName = (String) ppt.get("dbUserName");
-        GeneratorCfg.dbPassWord = (String) ppt.get("dbPassWord");
+        Config.dbDriver = (String) ppt.get("dbDriver");
+        Config.dbURL = (String) ppt.get("dbURL");
+        Config.dbUserName = (String) ppt.get("dbUserName");
+        Config.dbPassWord = (String) ppt.get("dbPassWord");
 
-        GeneratorCfg.sqlXml = Boolean.parseBoolean((String) ppt.get("sqlXml"));
-        GeneratorCfg.model = Boolean.parseBoolean((String) ppt.get("model"));
-        GeneratorCfg.modelVo = Boolean.parseBoolean((String) ppt.get("modelVo"));
-        GeneratorCfg.dao = Boolean.parseBoolean((String) ppt.get("dao"));
-        GeneratorCfg.daoImpl = Boolean.parseBoolean((String) ppt.get("daoImpl"));
-        GeneratorCfg.service = Boolean.parseBoolean((String) ppt.get("service"));
-        GeneratorCfg.serviceImpl = Boolean.parseBoolean((String) ppt.get("serviceImpl"));
-        GeneratorCfg.controller = Boolean.parseBoolean((String) ppt.get("controller"));
-        GeneratorCfg.editPage = Boolean.parseBoolean((String) ppt.get("editPage"));
-        GeneratorCfg.listPage = Boolean.parseBoolean((String) ppt.get("listPage"));
-        GeneratorCfg.viewPage = Boolean.parseBoolean((String) ppt.get("viewPage"));
+        Config.sqlXml = Boolean.parseBoolean((String) ppt.get("sqlXml"));
+        Config.model = Boolean.parseBoolean((String) ppt.get("model"));
+        Config.modelVo = Boolean.parseBoolean((String) ppt.get("modelVo"));
+        Config.dao = Boolean.parseBoolean((String) ppt.get("dao"));
+        Config.daoImpl = Boolean.parseBoolean((String) ppt.get("daoImpl"));
+        Config.service = Boolean.parseBoolean((String) ppt.get("service"));
+        Config.serviceImpl = Boolean.parseBoolean((String) ppt.get("serviceImpl"));
+        Config.controller = Boolean.parseBoolean((String) ppt.get("controller"));
+        Config.editPage = Boolean.parseBoolean((String) ppt.get("editPage"));
+        Config.listPage = Boolean.parseBoolean((String) ppt.get("listPage"));
+        Config.viewPage = Boolean.parseBoolean((String) ppt.get("viewPage"));
 
-        GeneratorCfg.localDateTime = Boolean.parseBoolean((String) ppt.get("localDateTime"));
+        Config.localDateTime = Boolean.parseBoolean((String) ppt.get("localDateTime"));
     }
 
     public static Properties readConfig(String filePath) {
