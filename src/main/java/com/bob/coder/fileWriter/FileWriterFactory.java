@@ -31,8 +31,10 @@ public class FileWriterFactory {
     public static Configuration getConfiguration(String url) {
         if (cfg == null) {
             cfg = new Configuration();
-            url = ClassLoader.getSystemResource("") + File.separator + url;
-
+            // TODO
+            url =
+//                    ClassLoader.getSystemResource("") + File.separator + url;
+            "\\D:\\java\\IntelliJ\\workSpace\\Bob\\coder\\target\\classes\\"+url;
             System.out.println(url);
             File file = new File(url);
             try {

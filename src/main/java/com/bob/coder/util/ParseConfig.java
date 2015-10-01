@@ -2,7 +2,6 @@ package com.bob.coder.util;
 
 import com.bob.coder.generator.GeneratorCfg;
 
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -16,10 +15,11 @@ import java.util.Properties;
  */
 public class ParseConfig {
 
+    // TODO
     static String filePath =
-//            "\\D:\\java\\IntelliJ\\workSpace\\Bob\\coder\\target\\classes\\config\\config.properties";
-            ClassLoader.getSystemResource("") + File.separator + "config" + File.separator
-                    + "config.properties";
+            "\\D:\\java\\IntelliJ\\workSpace\\Bob\\coder\\target\\classes\\config\\config.properties";
+//            ClassLoader.getSystemResource("") + File.separator + "config" + File.separator
+//                    + "config.properties";
 
     public static void setcfg() {
         Properties ppt = readConfig(filePath);
