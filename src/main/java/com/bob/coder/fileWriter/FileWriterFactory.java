@@ -30,7 +30,7 @@ public class FileWriterFactory {
 
     public static Configuration getConfiguration(String url) {
         if (cfg == null) {
-            cfg = new Configuration();
+            cfg = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
             // TODO
             url =
 //                    ClassLoader.getSystemResource("") + File.separator + url;
@@ -115,6 +115,7 @@ public class FileWriterFactory {
 
             out = new FileWriter(file);
 
+            assert temp != null;
             temp.process(table, out);
 
             temp.process(table, new OutputStreamWriter(System.out));
