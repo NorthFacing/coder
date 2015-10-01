@@ -16,8 +16,10 @@ import java.util.Properties;
  */
 public class ParseConfig {
 
-    static String filePath = System.getProperty("user.dir") + File.separator + "coder" + File.separator + "config" + File.separator
-            + "config.properties";
+    static String filePath =
+//            "\\D:\\java\\IntelliJ\\workSpace\\Bob\\coder\\target\\classes\\config\\config.properties";
+            ClassLoader.getSystemResource("") + File.separator + "config" + File.separator
+                    + "config.properties";
 
     public static void setcfg() {
         Properties ppt = readConfig(filePath);

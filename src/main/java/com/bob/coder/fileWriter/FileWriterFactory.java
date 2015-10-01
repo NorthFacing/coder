@@ -31,7 +31,7 @@ public class FileWriterFactory {
     public static Configuration getConfiguration(String url) {
         if (cfg == null) {
             cfg = new Configuration();
-            url = System.getProperty("user.dir") + File.separator + "coder" + File.separator + url;
+            url = ClassLoader.getSystemResource("") + File.separator + url;
 
             System.out.println(url);
             File file = new File(url);
