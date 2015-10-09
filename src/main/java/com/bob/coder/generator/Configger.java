@@ -7,7 +7,7 @@ package com.bob.coder.generator;
  * @author Bob
  * @created 2015年7月14日 下午4:24:57
  */
-public class Config {
+public class Configger {
 
     public static String[] tableNames;
     public static String packageName = "com.bob.biz";

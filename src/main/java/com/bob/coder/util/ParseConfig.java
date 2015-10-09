@@ -1,6 +1,6 @@
 package com.bob.coder.util;
 
-import com.bob.coder.generator.Config;
+import com.bob.coder.generator.Configger;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -25,30 +25,30 @@ public class ParseConfig {
         Properties ppt = readConfig(filePath);
         Object tableNames = ppt.get("tableNames");
         if (tableNames != null && !tableNames.equals("")) {
-            Config.tableNames = ((String) tableNames).split(",");
+            Configger.tableNames = ((String) tableNames).split(",");
         }
-        Config.packageName = (String) ppt.get("packageName");
-        Config.templatePath = (String) ppt.get("templatePath");
-        Config.outPutPath = (String) ppt.get("outPutPath");
+        Configger.packageName = (String) ppt.get("packageName");
+        Configger.templatePath = (String) ppt.get("templatePath");
+        Configger.outPutPath = (String) ppt.get("outPutPath");
 
-        Config.dbDriver = (String) ppt.get("dbDriver");
-        Config.dbURL = (String) ppt.get("dbURL");
-        Config.dbUserName = (String) ppt.get("dbUserName");
-        Config.dbPassWord = (String) ppt.get("dbPassWord");
+        Configger.dbDriver = (String) ppt.get("dbDriver");
+        Configger.dbURL = (String) ppt.get("dbURL");
+        Configger.dbUserName = (String) ppt.get("dbUserName");
+        Configger.dbPassWord = (String) ppt.get("dbPassWord");
 
-        Config.sqlXml = Boolean.parseBoolean((String) ppt.get("sqlXml"));
-        Config.model = Boolean.parseBoolean((String) ppt.get("model"));
-        Config.modelVo = Boolean.parseBoolean((String) ppt.get("modelVo"));
-        Config.dao = Boolean.parseBoolean((String) ppt.get("dao"));
-        Config.daoImpl = Boolean.parseBoolean((String) ppt.get("daoImpl"));
-        Config.service = Boolean.parseBoolean((String) ppt.get("service"));
-        Config.serviceImpl = Boolean.parseBoolean((String) ppt.get("serviceImpl"));
-        Config.controller = Boolean.parseBoolean((String) ppt.get("controller"));
-        Config.editPage = Boolean.parseBoolean((String) ppt.get("editPage"));
-        Config.listPage = Boolean.parseBoolean((String) ppt.get("listPage"));
-        Config.viewPage = Boolean.parseBoolean((String) ppt.get("viewPage"));
+        Configger.sqlXml = Boolean.parseBoolean((String) ppt.get("sqlXml"));
+        Configger.model = Boolean.parseBoolean((String) ppt.get("model"));
+        Configger.modelVo = Boolean.parseBoolean((String) ppt.get("modelVo"));
+        Configger.dao = Boolean.parseBoolean((String) ppt.get("dao"));
+        Configger.daoImpl = Boolean.parseBoolean((String) ppt.get("daoImpl"));
+        Configger.service = Boolean.parseBoolean((String) ppt.get("service"));
+        Configger.serviceImpl = Boolean.parseBoolean((String) ppt.get("serviceImpl"));
+        Configger.controller = Boolean.parseBoolean((String) ppt.get("controller"));
+        Configger.editPage = Boolean.parseBoolean((String) ppt.get("editPage"));
+        Configger.listPage = Boolean.parseBoolean((String) ppt.get("listPage"));
+        Configger.viewPage = Boolean.parseBoolean((String) ppt.get("viewPage"));
 
-        Config.localDateTime = Boolean.parseBoolean((String) ppt.get("localDateTime"));
+        Configger.localDateTime = Boolean.parseBoolean((String) ppt.get("localDateTime"));
     }
 
     public static Properties readConfig(String filePath) {

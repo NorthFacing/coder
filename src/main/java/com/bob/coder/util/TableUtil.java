@@ -1,6 +1,6 @@
 package com.bob.coder.util;
 
-import com.bob.coder.generator.Config;
+import com.bob.coder.generator.Configger;
 import com.bob.coder.table.Table;
 import com.bob.coder.table.TableBind;
 import com.bob.coder.table.TableCarray;
@@ -401,7 +401,7 @@ public class TableUtil {
                 carrayType = "Integer";
             }
             if (carrayType.equals("java.util.Date")) {
-                if (Config.localDateTime) {
+                if (Configger.localDateTime) {
                     carrayType = "LocalDateTime";
                     importedJARs.add("java.time.LocalDateTime");
                 } else {

@@ -2,7 +2,7 @@ package com;
 
 import com.bob.coder.connection.ConnectionFactory;
 import com.bob.coder.connection.DataSourceCfg;
-import com.bob.coder.generator.Config;
+import com.bob.coder.generator.Configger;
 import com.bob.coder.generator.Generator;
 import com.bob.coder.table.Table;
 import com.bob.coder.util.FileEnum;
@@ -27,42 +27,42 @@ public class Build {
             ParseConfig.setcfg();
 
             // 获取所有的表
-            DataSourceCfg ds = new DataSourceCfg(Config.dbDriver, Config.dbURL, Config.dbUserName, Config.dbPassWord);
+            DataSourceCfg ds = new DataSourceCfg(Configger.dbDriver, Configger.dbURL, Configger.dbUserName, Configger.dbPassWord);
             Connection conn = ConnectionFactory.getConnection(ds);
-            List<Table> tables = TableUtil.getTables(conn, Config.packageName, Config.tableNames);
+            List<Table> tables = TableUtil.getTables(conn, Configger.packageName, Configger.tableNames);
 
             for (Table table : tables) {
-                if (Config.sqlXml) {
+                if (Configger.sqlXml) {
                     Generator.generateMethod(table, FileEnum.SQLXML);
                 }
-                if (Config.model) {
+                if (Configger.model) {
                     Generator.generateMethod(table, FileEnum.MODEL);
                 }
-                if (Config.modelVo) {
+                if (Configger.modelVo) {
                     Generator.generateMethod(table, FileEnum.MODELVO);
                 }
-                if (Config.dao) {
+                if (Configger.dao) {
                     Generator.generateMethod(table, FileEnum.DAO);
                 }
-                if (Config.daoImpl) {
+                if (Configger.daoImpl) {
                     Generator.generateMethod(table, FileEnum.DAOIMPL);
                 }
-                if (Config.service) {
+                if (Configger.service) {
                     Generator.generateMethod(table, FileEnum.SERVICE);
                 }
-                if (Config.serviceImpl) {
+                if (Configger.serviceImpl) {
                     Generator.generateMethod(table, FileEnum.SERVICEIMPL);
                 }
-                if (Config.controller) {
+                if (Configger.controller) {
                     Generator.generateMethod(table, FileEnum.CONTROLLER);
                 }
-                if (Config.editPage) {
+                if (Configger.editPage) {
                     Generator.generateMethod(table, FileEnum.EDITPAGE);
                 }
-                if (Config.viewPage) {
+                if (Configger.viewPage) {
                     Generator.generateMethod(table, FileEnum.VIEWPAGE);
                 }
-                if (Config.listPage) {
+                if (Configger.listPage) {
                     Generator.generateMethod(table, FileEnum.LISTPAGE);
                 }
             }
