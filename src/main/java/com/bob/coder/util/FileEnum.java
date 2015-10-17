@@ -25,7 +25,7 @@ public enum FileEnum {
     public String packageNamee;
     public String fileName;
 
-    private FileEnum(String templateURI, String packageName, String fileName) {
+    FileEnum(String templateURI, String packageName, String fileName) {
         this.templateURI = templateURI;
         this.packageNamee = packageName;
         this.fileName = fileName;

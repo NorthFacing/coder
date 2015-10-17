@@ -41,8 +41,8 @@ public class Generator {
             cfg = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
             // TODO
             url =
-//                    ClassLoader.getSystemResource("") + File.separator + url;
-                    "\\D:\\java\\IntelliJ\\workSpace\\Bob\\coder\\target\\classes\\"+url;
+                    System.getProperty("user.dir") + File.separator + url;
+//                    "\\D:\\java\\IntelliJ\\workSpace\\Bob\\coder\\target\\classes\\"+url;
             System.out.println(url);
             File file = new File(url);
             try {
