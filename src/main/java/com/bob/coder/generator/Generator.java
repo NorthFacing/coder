@@ -23,10 +23,10 @@ public class Generator {
     public static void generateMethod(Table table, FileEnum fileType)
             throws IOException, TemplateException {
         // 获取模板
-        Configuration configuration = getConfiguration(Config.templatePath);
+        Configuration configuration = getConfiguration(Configger.templatePath);
         Template temp = configuration.getTemplate(fileType.templateURI);
         String packageName = table.getPackageName() + "." + table.getClassName_x() + fileType.packageNamee;
-        String url = Config.outPutPath + File.separator + packageName.replace(".", File.separator)
+        String url = Configger.outPutPath + File.separator + packageName.replace(".", File.separator)
                 + File.separator + table.getClassName_d() + fileType.fileName;
         File file = new File(url);
         DirMaker.createFile(file);
