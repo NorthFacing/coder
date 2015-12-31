@@ -10,9 +10,9 @@ public enum FileEnum {
      * fileName：文件名
      */
     SQLXML("sqlXml.ftl", ".mapper", "Mapper.xml"),
-    MODEL("model.ftl", ".model", ".java"),
-    MODELVO("modelVo.ftl", ".model", "Vo.java"),
-    DAO("dao.ftl", ".dao", "Dao.java"),
+    MODEL("model.ftl", ".entity", ".java"),
+    MODELVO("modelVo.ftl", ".entity", "Vo.java"),
+    DAO("dao.ftl", ".mapper", "Mapper.java"),
     DAOIMPL("daoImpl.ftl", ".dao.impl", "DaoImpl.java"),
     SERVICE("service.ftl", ".service", "Service.java"),
     SERVICEIMPL("serviceImp.ftl", ".service.impl", "ServiceImpl.java"),

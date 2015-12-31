@@ -40,9 +40,7 @@ public class Generator {
         if (cfg == null) {
             cfg = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
             // TODO
-            url =
-                    System.getProperty("user.dir") + File.separator + url;
-//                    "\\D:\\java\\IntelliJ\\workSpace\\Bob\\coder\\target\\classes\\"+url;
+            url ="C:\\java\\workSpace\\Bob\\coder\\src\\main\\resources\\template";
             System.out.println(url);
             File file = new File(url);
             try {

@@ -1,13 +1,14 @@
-package ${packageName}.${className_x}.model;
+package ${packageName}.${className_x}.entity;
 
 <#list importJARs as importJAR>
 <#--导入包-->
 import ${importJAR};
 </#list>
+import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 
-import com.mall.core.base.model.BaseModel;
+import com.bob.core.base.entity.BaseEntity;
 
-public class ${className_d}  extends BaseModel {
+public class ${className_d}  extends BaseEntity {
 
     <#--======================================== 列出所有的字段  ========================================-->
 	<#list tableCarrays as tableCarray>
@@ -40,8 +41,8 @@ public class ${className_d}  extends BaseModel {
 	</#if>
 	</#list>
 	
-@Override
-public String toString() {
-return ReflectionToStringBuilder.toString(this);
-}
+	@Override
+	public String toString() {
+		return ReflectionToStringBuilder.toString(this);
+	}
 }

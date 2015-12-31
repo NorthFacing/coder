@@ -1,8 +1,10 @@
-package ${packageName}.${className_x}.dao;
+package ${packageName}.${className_x}.mapper;
 
-import ${packageName}.${className_x}.domain.${className_d};
-import ${packageName}.${className_x}.domain.${className_d}Vo;
+import com.bob.core.base.dao.BaseMapper;
 
-public interface ${className_d}Dao extends BaseDao<${className_d}>{
+import ${packageName}.${className_x}.entity.${className_d};
+import ${packageName}.${className_x}.entity.${className_d}Vo;
+
+public interface ${className_d}Mapper extends BaseMapper<${className_d}, ${className_d}Vo>{
 
 }

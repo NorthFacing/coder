@@ -1,7 +1,7 @@
 package ${packageName}.${className_x}.service;
 
-import ${packageName}.${className_x}.model.${className_d};
-import ${packageName}.${className_x}.model.${className_d}Vo;
+import ${packageName}.${className_x}.entity.${className_d};
+import ${packageName}.${className_x}.entity.${className_d}Vo;
 import com.mall.core.base.service.BaseService;
 
 /**
@@ -10,6 +10,6 @@ import com.mall.core.base.service.BaseService;
  * @author Bob
  * @Date ${.now}
  */
-public interface ${className_d}Service extends BaseService<${className_d}, ${className_d}Vo> {
+public interface ${className_d}Service {
 
 }
