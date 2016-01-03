@@ -8,6 +8,12 @@ import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 
 import com.bob.core.base.entity.BaseEntity;
 
+/**
+* ${className_d}
+* @since v0.1
+* @author Bob
+* @Date ${.now}
+*/
 public class ${className_d}  extends BaseEntity {
 
     <#--======================================== 列出所有的字段  ========================================-->

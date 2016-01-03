@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="${packageName}.${className_x}.mapper.${className_d}Mapper">
-	<resultMap id="BaseResultMap" type="${packageName}.${className_x}.model.${className_d}">
+	<resultMap id="BaseResultMap" type="${packageName}.${className_x}.entity.${className_d}">
 		<#list tableCarrays as tableCarray>
 		   <result column="${tableCarray.carrayName}" property="${tableCarray.carrayName_x}" />
 		</#list>
 	</resultMap>
-	
-	<sql id="tabaleName">${className_x}</sql>
+
+	<sql id="tabaleName">${className}</sql>
 
 	<sql id="baseColumn">
 		<#list tableCarrays as tableCarray>
@@ -21,21 +21,36 @@
 		</#list>
 	</sql>
 
-	<sql id="where">
+    <sql id="whereCondition">
         <where>
 		<#list tableCarrays as tableCarray>
-            <if test=" ${tableCarray.carrayName_x} !=null and ${tableCarray.carrayName_x} !='' ">
-                and ${tableCarray.carrayName} = ${tableCarray.carrayName_x}
+            <if test=" ${tableCarray.carrayName_x} != null ">
+                AND ${tableCarray.carrayName} = ${r'#'}{${tableCarray.carrayName_x}}
             </if>
 		</#list>
         </where>
 	</sql>
 
-	<select id="getList" parameterType="${packageName}.${className_x}.entity.${className_d}Vo" resultMap="BaseResultMap">
-		select
-		<include refid="baseColumn"></include>
-		from
-		<include refid="tabaleName"></include>
-	</select>
-	
+    <sql id="queryCondition">
+        <where>
+        </where>
+    </sql>
+
+    <select id="count" parameterType="com.bob.modules.sysResource.entity.SysResourceQuery" resultType="java.lang.Long">
+        SELECT count(*)
+        FROM
+        <include refid="tabaleName"/>
+        <include refid="queryCondition"/>
+    </select>
+
+    <select id="query" parameterType="com.bob.modules.sysResource.entity.SysResourceQuery" resultMap="BaseResultMap">
+        SELECT
+        <include refid="baseColumn"/>
+        FROM
+        <include refid="tabaleName"/>
+        <include refid="queryCondition"/>
+        LIMIT ${r'#'}{startRow}, ${r'#'}{pageSize}
+    </select>
+
+
 </mapper>
