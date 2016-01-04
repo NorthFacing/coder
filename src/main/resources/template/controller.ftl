@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Map;
 
-
 /**
  * ${className_d}Controller
  * @since v0.0.1
@@ -45,6 +44,7 @@ public class ${className_d}Controller extends BaseController {
         return "/${className_x}/edit";
     }
 
+    @ResponseBody
     @RequestMapping(value = "/${className_x}/save")
         public Result save(${className_d} entity) {
         Result result = Result.fail();
@@ -59,6 +59,7 @@ public class ${className_d}Controller extends BaseController {
         return "/sysResource/view";
     }
 
+    @ResponseBody
     @RequestMapping(value = "/${className_x}/delete")
         public Result delete(String id) {
         Result result = Result.fail();
