@@ -2,9 +2,9 @@ package com;
 
 import com.bob.coder.connection.ConnectionFactory;
 import com.bob.coder.connection.DataSourceCfg;
-import com.bob.coder.generator.Configger;
 import com.bob.coder.generator.Generator;
 import com.bob.coder.table.Table;
+import com.bob.coder.util.Configger;
 import com.bob.coder.util.FileEnum;
 import com.bob.coder.util.ParseConfig;
 import com.bob.coder.util.TableUtil;

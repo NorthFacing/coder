@@ -1,6 +1,5 @@
 package com.bob.coder.util;
 
-import com.bob.coder.generator.Configger;
 import com.bob.coder.table.Table;
 import com.bob.coder.table.TableBind;
 import com.bob.coder.table.TableCarray;

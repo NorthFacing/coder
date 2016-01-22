@@ -1,7 +1,5 @@
 package com.bob.coder.util;
 
-import com.bob.coder.generator.Configger;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -17,7 +15,7 @@ public class ParseConfig {
 
   // TODO
   static String filePath =
-      "C:\\java\\workSpace\\Bob\\coder\\src\\main\\resources\\config\\config.properties";
+      System.getProperty("user.dir") + "\\src\\main\\resources\\config\\config.properties";
 
   public static void setcfg() {
     Properties ppt = readConfig(filePath);
@@ -64,8 +62,8 @@ public class ParseConfig {
   }
 
   public static void main(String[] args) {
-    ParseConfig cfg = new ParseConfig();
-    System.out.println(cfg);
+    String s = System.getProperty("user.dir");
+    System.out.println(s);
 
   }
 

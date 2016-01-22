@@ -1,6 +1,7 @@
 package com.bob.coder.generator;
 
 import com.bob.coder.table.Table;
+import com.bob.coder.util.Configger;
 import com.bob.coder.util.DirMaker;
 import com.bob.coder.util.FileEnum;
 import freemarker.template.Configuration;
@@ -27,11 +28,16 @@ public class Generator {
   public static void generateMethod(Table table, FileEnum fileType)
       throws IOException, TemplateException {
     // 获取模板
-    Configuration configuration = getConfiguration(Configger.templatePath);
+    String templatePath = System.getProperty("user.dir") + "\\src\\main\\resources\\template";
+    if (Configger.templatePath != null) {
+      templatePath = System.getProperty("user.dir") + "\\src\\main\\resources\\" + Configger.templatePath;
+    }
+    Configuration configuration = getConfiguration(templatePath);
     Template temp = configuration.getTemplate(fileType.templateName);
     String packageName = table.getPackageName() + "." + table.getClassName_x() + fileType.packageName;
-    String url = Configger.outPutPath + File.separator + packageName.replace(".", File.separator)
-        + File.separator + table.getClassName_d() + fileType.fileName;
+    String url = System.getProperty("user.dir") + File.separator + "outPut" + File.separator
+        + packageName.replace(".", File.separator) + File.separator
+        + table.getClassName_d() + fileType.fileName;
     File file = new File(url);
     DirMaker.createFile(file);
     Writer out = new FileWriter(file);
@@ -40,13 +46,10 @@ public class Generator {
     out.flush();
   }
 
-  public static Configuration getConfiguration(String url) {
+  public static Configuration getConfiguration(String templatePath) {
     if (cfg == null) {
       cfg = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
-      // TODO
-      url = "C:\\java\\workSpace\\Bob\\coder\\src\\main\\resources\\template";
-      System.out.println(url);
-      File file = new File(url);
+      File file = new File(templatePath);
       try {
         cfg.setDirectoryForTemplateLoading(file);
         cfg.setObjectWrapper(new DefaultObjectWrapper());

@@ -1,4 +1,4 @@
-package com.bob.coder.generator;
+package com.bob.coder.util;
 
 /**
  * 生成文件的所有可选项
@@ -10,9 +10,9 @@ package com.bob.coder.generator;
 public class Configger {
 
   public static String[] tableNames;
+  public static String outPutPath;
   public static String packageName = "com.bob.biz";
   public static String templatePath = "template/";
-  public static String outPutPath = "D:/outPut";
 
   public static String dbDriver = "com.mysql.jdbc.Driver";
   public static String dbURL;
