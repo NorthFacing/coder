@@ -14,9 +14,9 @@ public enum FileEnum {
   SERVICE("service.ftl", ".service", "Service.java", true),
   SERVICE_IMPL("serviceImp.ftl", ".service.impl", "ServiceImpl.java", true),
   CONTROLLER("controller.ftl", ".controller", "Controller.java", true),
-  LIST_PAGE("list.ftl", ".jsp.", "List.jsp", true),
-  EDIT_PAGE("edit.ftl", ".jsp.", "edit.jsp", true),
-  VIEW_PAGE("view.ftl", ".jsp.", "View.jsp", true);
+  LIST_PAGE("list.ftl", ".jsp", "List.jsp", true),
+  EDIT_PAGE("edit.ftl", ".jsp", "edit.jsp", true),
+  VIEW_PAGE("view.ftl", ".jsp", "View.jsp", true);
 
   public String templateName;
   public String packageName;
