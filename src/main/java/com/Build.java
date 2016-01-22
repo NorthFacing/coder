@@ -31,39 +31,13 @@ public class Build {
       Connection conn = ConnectionFactory.getConnection(ds);
       List<Table> tables = TableUtil.getTables(conn, Configger.packageName, Configger.tableNames);
 
+      // 遍历所有表
       for (Table table : tables) {
-        if (Configger.sqlXml) {
-          Generator.generateMethod(table, FileEnum.SQLXML);
-        }
-        if (Configger.model) {
-          Generator.generateMethod(table, FileEnum.MODEL);
-        }
-        if (Configger.modelVo) {
-          Generator.generateMethod(table, FileEnum.MODELVO);
-        }
-        if (Configger.dao) {
-          Generator.generateMethod(table, FileEnum.DAO);
-        }
-        if (Configger.daoImpl) {
-          Generator.generateMethod(table, FileEnum.DAOIMPL);
-        }
-        if (Configger.service) {
-          Generator.generateMethod(table, FileEnum.SERVICE);
-        }
-        if (Configger.serviceImpl) {
-          Generator.generateMethod(table, FileEnum.SERVICEIMPL);
-        }
-        if (Configger.controller) {
-          Generator.generateMethod(table, FileEnum.CONTROLLER);
-        }
-        if (Configger.editPage) {
-          Generator.generateMethod(table, FileEnum.EDITPAGE);
-        }
-        if (Configger.viewPage) {
-          Generator.generateMethod(table, FileEnum.VIEWPAGE);
-        }
-        if (Configger.listPage) {
-          Generator.generateMethod(table, FileEnum.LISTPAGE);
+        // 遍历所有模板文件
+        for (FileEnum fileEnum : FileEnum.values()) {
+          if (fileEnum.isGenerate) {
+            Generator.generateMethod(table, fileEnum);
+          }
         }
       }
     } catch (Exception e) {

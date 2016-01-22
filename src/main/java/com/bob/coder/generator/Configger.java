@@ -19,17 +19,5 @@ public class Configger {
   public static String dbUserName;
   public static String dbPassWord;
 
-  public static boolean sqlXml;
-  public static boolean model;
-  public static boolean modelVo;
-  public static boolean dao;
-  public static boolean daoImpl;
-  public static boolean service;
-  public static boolean serviceImpl;
-  public static boolean controller;
-  public static boolean editPage;
-  public static boolean viewPage;
-  public static boolean listPage;
-
   public static boolean localDateTime;
 }

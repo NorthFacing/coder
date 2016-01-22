@@ -34,17 +34,13 @@ public class ParseConfig {
     Configger.dbUserName = (String) ppt.get("dbUserName");
     Configger.dbPassWord = (String) ppt.get("dbPassWord");
 
-    Configger.sqlXml = Boolean.parseBoolean((String) ppt.get("sqlXml"));
-    Configger.model = Boolean.parseBoolean((String) ppt.get("model"));
-    Configger.modelVo = Boolean.parseBoolean((String) ppt.get("modelVo"));
-    Configger.dao = Boolean.parseBoolean((String) ppt.get("dao"));
-    Configger.daoImpl = Boolean.parseBoolean((String) ppt.get("daoImpl"));
-    Configger.service = Boolean.parseBoolean((String) ppt.get("service"));
-    Configger.serviceImpl = Boolean.parseBoolean((String) ppt.get("serviceImpl"));
-    Configger.controller = Boolean.parseBoolean((String) ppt.get("controller"));
-    Configger.editPage = Boolean.parseBoolean((String) ppt.get("editPage"));
-    Configger.listPage = Boolean.parseBoolean((String) ppt.get("listPage"));
-    Configger.viewPage = Boolean.parseBoolean((String) ppt.get("viewPage"));
+    for (FileEnum e : FileEnum.values()) {
+      String templateName = e.templateName;
+      if (templateName.endsWith(".ftl")) {
+        templateName = templateName.substring(0, templateName.length() - 4);
+        e.isGenerate = Boolean.parseBoolean((String) ppt.get(templateName));
+      }
+    }
 
     Configger.localDateTime = Boolean.parseBoolean((String) ppt.get("localDateTime"));
   }
