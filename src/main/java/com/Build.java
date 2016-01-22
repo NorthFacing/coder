@@ -27,9 +27,7 @@ public class Build {
       ParseConfig.setcfg();
 
       // 获取所有的表
-      DataSourceCfg ds = new DataSourceCfg(Configger.dbDriver, Configger.dbURL, Configger.dbUserName, Configger.dbPassWord);
-      Connection conn = ConnectionFactory.getConnection(ds);
-      List<Table> tables = TableUtil.getTables(conn, Configger.packageName, Configger.tableNames);
+      List<Table> tables = getTables();
 
       // 遍历所有表
       for (Table table : tables) {
@@ -43,6 +41,12 @@ public class Build {
     } catch (Exception e) {
       e.printStackTrace();
     }
+  }
+
+  private static List<Table> getTables() throws Exception {
+    DataSourceCfg ds = new DataSourceCfg(Configger.dbDriver, Configger.dbURL, Configger.dbUserName, Configger.dbPassWord);
+    Connection conn = ConnectionFactory.getConnection(ds);
+    return TableUtil.getTables(conn, Configger.packageName, Configger.tableNames);
   }
 
 }
