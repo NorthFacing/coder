@@ -3,3 +3,6 @@
 /.idea
 /outPut
 *.iml
+/.settings
+.classpath
+.project
