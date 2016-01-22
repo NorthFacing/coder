@@ -35,7 +35,9 @@ public class Generator {
     Configuration configuration = getConfiguration(templatePath);
     Template temp = configuration.getTemplate(fileType.templateName);
     String packageName = table.getPackageName() + "." + table.getClassName_x() + fileType.packageName;
-    String url = System.getProperty("user.dir") + File.separator + "outPut" + File.separator
+    // 获取生成代码路径
+    String url = (Configger.outPutPath == null ? System.getProperty("user.dir") : Configger.outPutPath)
+        + File.separator + "outPut" + File.separator
         + packageName.replace(".", File.separator) + File.separator
         + table.getClassName_d() + fileType.fileName;
     File file = new File(url);
