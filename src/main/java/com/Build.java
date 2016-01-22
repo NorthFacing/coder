@@ -21,54 +21,54 @@ import java.util.List;
  */
 public class Build {
 
-    public static void main(String[] args) {
-        try {
-            // 初始化参数
-            ParseConfig.setcfg();
+  public static void main(String[] args) {
+    try {
+      // 初始化参数
+      ParseConfig.setcfg();
 
-            // 获取所有的表
-            DataSourceCfg ds = new DataSourceCfg(Configger.dbDriver, Configger.dbURL, Configger.dbUserName, Configger.dbPassWord);
-            Connection conn = ConnectionFactory.getConnection(ds);
-            List<Table> tables = TableUtil.getTables(conn, Configger.packageName, Configger.tableNames);
+      // 获取所有的表
+      DataSourceCfg ds = new DataSourceCfg(Configger.dbDriver, Configger.dbURL, Configger.dbUserName, Configger.dbPassWord);
+      Connection conn = ConnectionFactory.getConnection(ds);
+      List<Table> tables = TableUtil.getTables(conn, Configger.packageName, Configger.tableNames);
 
-            for (Table table : tables) {
-                if (Configger.sqlXml) {
-                    Generator.generateMethod(table, FileEnum.SQLXML);
-                }
-                if (Configger.model) {
-                    Generator.generateMethod(table, FileEnum.MODEL);
-                }
-                if (Configger.modelVo) {
-                    Generator.generateMethod(table, FileEnum.MODELVO);
-                }
-                if (Configger.dao) {
-                    Generator.generateMethod(table, FileEnum.DAO);
-                }
-                if (Configger.daoImpl) {
-                    Generator.generateMethod(table, FileEnum.DAOIMPL);
-                }
-                if (Configger.service) {
-                    Generator.generateMethod(table, FileEnum.SERVICE);
-                }
-                if (Configger.serviceImpl) {
-                    Generator.generateMethod(table, FileEnum.SERVICEIMPL);
-                }
-                if (Configger.controller) {
-                    Generator.generateMethod(table, FileEnum.CONTROLLER);
-                }
-                if (Configger.editPage) {
-                    Generator.generateMethod(table, FileEnum.EDITPAGE);
-                }
-                if (Configger.viewPage) {
-                    Generator.generateMethod(table, FileEnum.VIEWPAGE);
-                }
-                if (Configger.listPage) {
-                    Generator.generateMethod(table, FileEnum.LISTPAGE);
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+      for (Table table : tables) {
+        if (Configger.sqlXml) {
+          Generator.generateMethod(table, FileEnum.SQLXML);
         }
+        if (Configger.model) {
+          Generator.generateMethod(table, FileEnum.MODEL);
+        }
+        if (Configger.modelVo) {
+          Generator.generateMethod(table, FileEnum.MODELVO);
+        }
+        if (Configger.dao) {
+          Generator.generateMethod(table, FileEnum.DAO);
+        }
+        if (Configger.daoImpl) {
+          Generator.generateMethod(table, FileEnum.DAOIMPL);
+        }
+        if (Configger.service) {
+          Generator.generateMethod(table, FileEnum.SERVICE);
+        }
+        if (Configger.serviceImpl) {
+          Generator.generateMethod(table, FileEnum.SERVICEIMPL);
+        }
+        if (Configger.controller) {
+          Generator.generateMethod(table, FileEnum.CONTROLLER);
+        }
+        if (Configger.editPage) {
+          Generator.generateMethod(table, FileEnum.EDITPAGE);
+        }
+        if (Configger.viewPage) {
+          Generator.generateMethod(table, FileEnum.VIEWPAGE);
+        }
+        if (Configger.listPage) {
+          Generator.generateMethod(table, FileEnum.LISTPAGE);
+        }
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
     }
+  }
 
 }

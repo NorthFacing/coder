@@ -8,7 +8,11 @@ import freemarker.template.DefaultObjectWrapper;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 
 
 /**
@@ -18,38 +22,38 @@ import java.io.*;
  */
 public class Generator {
 
-    private static Configuration cfg;
+  private static Configuration cfg;
 
-    public static void generateMethod(Table table, FileEnum fileType)
-            throws IOException, TemplateException {
-        // 获取模板
-        Configuration configuration = getConfiguration(Configger.templatePath);
-        Template temp = configuration.getTemplate(fileType.templateURI);
-        String packageName = table.getPackageName() + "." + table.getClassName_x() + fileType.packageNamee;
-        String url = Configger.outPutPath + File.separator + packageName.replace(".", File.separator)
-                + File.separator + table.getClassName_d() + fileType.fileName;
-        File file = new File(url);
-        DirMaker.createFile(file);
-        Writer out = new FileWriter(file);
-        temp.process(table, out);
-        temp.process(table, new OutputStreamWriter(System.out));
-        out.flush();
-    }
+  public static void generateMethod(Table table, FileEnum fileType)
+      throws IOException, TemplateException {
+    // 获取模板
+    Configuration configuration = getConfiguration(Configger.templatePath);
+    Template temp = configuration.getTemplate(fileType.templateURI);
+    String packageName = table.getPackageName() + "." + table.getClassName_x() + fileType.packageNamee;
+    String url = Configger.outPutPath + File.separator + packageName.replace(".", File.separator)
+        + File.separator + table.getClassName_d() + fileType.fileName;
+    File file = new File(url);
+    DirMaker.createFile(file);
+    Writer out = new FileWriter(file);
+    temp.process(table, out);
+    temp.process(table, new OutputStreamWriter(System.out));
+    out.flush();
+  }
 
-    public static Configuration getConfiguration(String url) {
-        if (cfg == null) {
-            cfg = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
-            // TODO
-            url ="C:\\java\\workSpace\\Bob\\coder\\src\\main\\resources\\template";
-            System.out.println(url);
-            File file = new File(url);
-            try {
-                cfg.setDirectoryForTemplateLoading(file);
-                cfg.setObjectWrapper(new DefaultObjectWrapper());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return cfg;
+  public static Configuration getConfiguration(String url) {
+    if (cfg == null) {
+      cfg = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
+      // TODO
+      url = "C:\\java\\workSpace\\Bob\\coder\\src\\main\\resources\\template";
+      System.out.println(url);
+      File file = new File(url);
+      try {
+        cfg.setDirectoryForTemplateLoading(file);
+        cfg.setObjectWrapper(new DefaultObjectWrapper());
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
+    return cfg;
+  }
 }
