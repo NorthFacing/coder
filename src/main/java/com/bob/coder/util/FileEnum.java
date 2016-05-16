@@ -12,7 +12,7 @@ public enum FileEnum {
   DAO("dao.ftl", ".mapper", "Mapper.java", true),
   DAO_IMPL("daoImpl.ftl", ".dao.impl", "DaoImpl.java", true),
   SERVICE("service.ftl", ".service", "Service.java", true),
-  SERVICE_IMPL("serviceImp.ftl", ".service.impl", "ServiceImpl.java", true),
+  SERVICE_IMPL("serviceImpl.ftl", ".service.impl", "ServiceImpl.java", true),
   CONTROLLER("controller.ftl", ".controller", "Controller.java", true),
   LIST_PAGE("list.ftl", ".jsp", "List.jsp", true),
   EDIT_PAGE("edit.ftl", ".jsp", "edit.jsp", true),

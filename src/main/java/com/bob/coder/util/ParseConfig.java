@@ -13,9 +13,8 @@ import java.util.Properties;
  */
 public class ParseConfig {
 
-  // TODO
   static String filePath =
-      System.getProperty("user.dir") + "\\src\\main\\resources\\config\\config.properties";
+          System.getProperty("user.dir") + "\\src\\main\\resources\\config\\config.properties";
 
   public static void setcfg() {
     Properties ppt = readConfig(filePath);
@@ -36,7 +35,9 @@ public class ParseConfig {
       String templateName = e.templateName;
       if (templateName.endsWith(".ftl")) {
         templateName = templateName.substring(0, templateName.length() - 4);
-        e.isGenerate = Boolean.parseBoolean((String) ppt.get(templateName));
+        if (ppt.get(templateName) != null) {
+          e.isGenerate = Boolean.parseBoolean((String) ppt.get(templateName));
+        }
       }
     }
 

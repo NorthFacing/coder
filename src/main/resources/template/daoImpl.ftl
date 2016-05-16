@@ -7,11 +7,11 @@ import ${packageName}.${className_x}.entity.${className_d};
 import ${packageName}.${className_x}.entity.${className_d}Vo;
 
 /**
-* ${className_d}DaoImpl
-* @since v0.1
-* @author Bob
-* @Date ${.now}
-*/
+ * ${className_d}DaoImpl
+ * @since v0.1
+ * @author Bob
+ * @Date ${.now}
+ */
 @Service("${className_x}DaoImpl")
 public class ${className_d}DaoImpl extends BaseDaoImpl<${className_d}> implements ${className_d}Dao{
     private String nameSpace = this.getClass().getName();
