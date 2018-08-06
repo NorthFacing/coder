@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service
  * @author Bob.Zhu
  * @Date ${.now}
  */
-@Service("${className_d}Service")
+@Service("${className_x}Service")
 class ${className_d}ServiceImpl : ${className_d}Service, BaseServiceImpl<${className_d}>() {
 
   @Autowired
