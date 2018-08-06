@@ -17,7 +17,7 @@ import java.io.Writer;
 
 
 /**
- * @author Bob
+ * @author Bob.Zhu
  * @created 2015年7月14日 下午4:36:34
  * @since v0.0.1
  */
@@ -28,9 +28,9 @@ public class Generator {
   public static void generateMethod(Table table, FileEnum fileType)
       throws IOException, TemplateException {
     // 获取模板
-    String templatePath = System.getProperty("user.dir") + "\\src\\main\\resources\\template";
+    String templatePath = System.getProperty("user.dir") + "/src/main/resources/template/java";
     if (Configger.templatePath != null) {
-      templatePath = System.getProperty("user.dir") + "\\src\\main\\resources\\" + Configger.templatePath;
+      templatePath = System.getProperty("user.dir") + "/src/main/resources/" + Configger.templatePath;
     }
     Configuration configuration = getConfiguration(templatePath);
     Template temp = configuration.getTemplate(fileType.templateName);

@@ -8,14 +8,14 @@ import java.util.Properties;
 /**
  * 配置解析
  *
- * @author Bob
+ * @author Bob.Zhu
  * @created 2015年7月14日 下午5:42:47
  * @since v0.0.1
  */
 public class ParseConfig {
 
   static String filePath =
-          System.getProperty("user.dir") + "\\src\\main\\resources\\config\\config.properties";
+          System.getProperty("user.dir") + "/src/main/resources/config/config.properties";
 
   public static void setcfg() {
     Properties ppt = readConfig(filePath);

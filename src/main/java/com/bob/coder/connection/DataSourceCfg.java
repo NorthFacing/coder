@@ -3,7 +3,7 @@ package com.bob.coder.connection;
 /**
  * 数据库配置
  *
- * @author Bob
+ * @author Bob.Zhu
  * @created 2015年7月14日 下午5:09:40
  * @since v0.0.1
  */

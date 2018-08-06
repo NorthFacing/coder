@@ -11,8 +11,8 @@ import java.util.List;
 
 /**
  * ${className_d}Mapper
- * @since v0.1
- * @author Bob
+ * @since v0.0.1
+ * @author Bob.Zhu
  * @Date ${.now}
  */
 public interface ${className_d}Mapper extends BaseMapper<${className_d}, ${className_d}Vo> {

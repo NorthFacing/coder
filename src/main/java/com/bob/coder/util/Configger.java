@@ -3,7 +3,7 @@ package com.bob.coder.util;
 /**
  * 生成文件的所有可选项
  *
- * @author Bob
+ * @author Bob.Zhu
  * @created 2015年7月14日 下午4:24:57
  * @since v0.0.1
  */

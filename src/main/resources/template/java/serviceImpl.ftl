@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 
 /**
  * ${className_d}ServiceImpl
- * @since v0.1
- * @author Bob
+ * @since v0.0.1
+ * @author Bob.Zhu
  * @Date ${.now}
  */
 @Service("${className_x}Service")

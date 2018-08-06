@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 程序入口，执行此mian函数执行代码生成操作
  *
- * @author Bob
+ * @author Bob.Zhu
  * @created 2015年7月14日 下午4:19:22
  * @since v0.0.1
  */

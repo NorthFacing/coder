@@ -8,8 +8,8 @@ import ${packageName}.${className_x}.entity.${className_d}Vo;
 
 /**
  * ${className_d}DaoImpl
- * @since v0.1
- * @author Bob
+ * @since v0.0.1
+ * @author Bob.Zhu
  * @Date ${.now}
  */
 @Service("${className_x}DaoImpl")

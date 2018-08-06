@@ -7,7 +7,7 @@ import ${packageName}.${className_x}.entity.${className_d}Vo;
 /**
  * ${className_d}Service
  * @since v0.0.1
- * @author Bob
+ * @author Bob.Zhu
  * @Date ${.now}
  */
 public interface ${className_d}Service extends BaseService<${className_d}, ${className_d}Vo> {
