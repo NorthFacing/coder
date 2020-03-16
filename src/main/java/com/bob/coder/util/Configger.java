@@ -13,6 +13,7 @@ public class Configger {
   public static String outPutPath;
   public static String packageName = "com.bob.biz";
   public static String templatePath = "template/";
+  public static String resultType = "java";
 
   public static String dbDriver = "com.mysql.jdbc.Driver";
   public static String dbURL;

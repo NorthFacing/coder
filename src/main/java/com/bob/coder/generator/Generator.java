@@ -39,7 +39,7 @@ public class Generator {
     String url = (Configger.outPutPath == null ? System.getProperty("user.dir") : Configger.outPutPath)
         + File.separator + "outPut" + File.separator
         + packageName.replace(".", File.separator) + File.separator
-        + table.getClassName_d() + fileType.fileName;
+        + table.getClassName_d() + fileType.fileName + Configger.resultType;
     File file = new File(url);
     DirMaker.createFile(file);
     Writer out = new FileWriter(file);

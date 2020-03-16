@@ -10,14 +10,14 @@ public enum FileEnum {
   EDIT_PAGE("edit.ftl", ".jsp", "edit.jsp", true),
   VIEW_PAGE("view.ftl", ".jsp", "View.jsp", true),
 
-  MODEL("model.ftl", ".entity", ".kt", true),
-  MODEL_VO("modelVo.ftl", ".entity", "Vo.kt", true),
-  QUERY("query.ftl", ".entity", "Query.kt", true),
-  DAO("dao.ftl", ".mapper", "Mapper.kt", true),
-  DAO_IMPL("daoImpl.ftl", ".dao.impl", "DaoImpl.kt", true),
-  SERVICE("service.ftl", ".service", "Service.kt", true),
-  SERVICE_IMPL("serviceImpl.ftl", ".service.impl", "ServiceImpl.kt", true),
-  CONTROLLER("controller.ftl", ".controller", "Controller.kt", true);
+  MODEL("model.ftl", ".entity", ".", true),
+  MODEL_VO("modelVo.ftl", ".entity", "Vo.", true),
+  QUERY("query.ftl", ".entity", "Query.", true),
+  DAO("dao.ftl", ".mapper", "Mapper.", true),
+  DAO_IMPL("daoImpl.ftl", ".dao.impl", "DaoImpl.", true),
+  SERVICE("service.ftl", ".service", "Service.", true),
+  SERVICE_IMPL("serviceImpl.ftl", ".service.impl", "ServiceImpl.", true),
+  CONTROLLER("controller.ftl", ".controller", "Controller.", true);
 
   public String templateName;
   public String packageName;

@@ -25,6 +25,7 @@ public class ParseConfig {
     Configger.packageName = (String) ppt.get("packageName");
     Configger.templatePath = (String) ppt.get("templatePath");
     Configger.outPutPath = (String) ppt.get("outPutPath");
+    Configger.resultType = (String) ppt.get("resultType");
 
     Configger.dbDriver = (String) ppt.get("dbDriver");
     Configger.dbURL = (String) ppt.get("dbURL");
