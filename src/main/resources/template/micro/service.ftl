@@ -1,7 +1,8 @@
 package ${packageName}.${className_x}.service;
 
-import ${packageName}.${className_x}.model.${className_d};
-import com.joyoung.smart.base.exceptions.BaseException;
+import ${packageName}.${className_d};
+import com.joyoung.smart.base.exceptions.DbException;
+import java.util.List;
 
 /**
  * ${className_d}Service
@@ -10,12 +11,14 @@ import com.joyoung.smart.base.exceptions.BaseException;
  */
 public interface ${className_d}Service {
 
-  ${className_d} insert(${className_d} entity) throws BaseException;
+    String insert(${className_d} entity) throws DbException;
 
-  int update(${className_d} entity) throws BaseException;
+    List<String> insertBatch(List<${className_d}> entity) throws DbException;
 
-  int delete(String id, String updateUser) throws BaseException;
+    int update(${className_d} entity) throws DbException;
 
-  ${className_d} query(${className_d} entity) throws BaseException;
+    List<${className_d}> query(${className_d} entity) throws DbException, ParamException ;
+
+    int delete(String id, String updateUser) throws DbException;
 
 }
