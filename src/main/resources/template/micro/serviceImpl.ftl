@@ -64,7 +64,7 @@ public class ${className_d}ServiceImpl implements ${className_d}Service {
         List<Object> param = new ArrayList<>();
         sql.append(" update ${className} set ");
         <#list tableCarrays as tableCarray>
-            <#if (tableCarray.carrayName_x != "id") && (tableCarray.carrayName_x != "createUser") && tableCarray.carrayName_x != "createTime">
+            <#if (tableCarray.carrayName_x != "id") && (tableCarray.carrayName_x != "createUser") && tableCarray.carrayName_x != "createTime" && tableCarray.carrayName_x != "update_time">
                 <#if tableCarray.carrayType == "String">
         if (StringUtils.isNotEmpty(entity.get${tableCarray.carrayName_d}())) {
                 <#else>
