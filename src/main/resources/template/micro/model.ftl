@@ -37,11 +37,4 @@ public class ${className_d}  extends BaseModel {
 	</#if>
 	</#list>
 
-	public ${className_d}() {
-	}
-
-	public ${className_d}(String id) {
-		this.id = id;
-	}
-
 }
