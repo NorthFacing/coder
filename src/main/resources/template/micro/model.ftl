@@ -31,7 +31,7 @@ public class ${className_d}  extends BaseModel {
 		&& tableCarray.carrayName_x != "updateUser"
 		&& tableCarray.carrayName_x != "updateTime"
 		&& tableCarray.carrayName_x != "deleted" )>
-	/**  ${tableCarray.remark} */
+	/** <#if tableCarray.remark!="">${tableCarray.remark}<#else>${tableCarray.carrayName_x}</#if> */
 	@JSONField(name = "${tableCarray.carrayName}")
 	private ${tableCarray.carrayType} ${tableCarray.carrayName_x};
 	</#if>
