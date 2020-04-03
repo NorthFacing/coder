@@ -2,6 +2,7 @@ package ${packageName}.${className_x}.service;
 
 import ${packageName}.${className_d};
 import com.joyoung.smart.base.exceptions.DbException;
+import com.joyoung.smart.base.exceptions.ParamException;
 import java.util.List;
 
 /**

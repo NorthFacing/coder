@@ -3,6 +3,8 @@ package ${packageName}.${className_x}.service.impl;
 import com.alibaba.fastjson.JSONArray;
 import com.joyoung.base.boot.utils.db.DataCenter;
 import com.joyoung.smart.base.exceptions.DbException;
+import com.joyoung.smart.base.exceptions.ParamException;
+import com.joyoung.smart.base.utils.CollectionUtil;
 import com.joyoung.smart.base.utils.UUIDUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -32,7 +34,7 @@ public class ${className_d}ServiceImpl implements ${className_d}Service {
         String sql = "insert into ${className} (<#list tableCarrays as tableCarray><#if (!tableCarray?is_first)>, </#if>${tableCarray.carrayName}</#list>) values (<#list tableCarrays as tableCarray><#if (!tableCarray?is_first)>, </#if><#if (tableCarray.carrayName_x == "createTime" || tableCarray.carrayName_x == "updateTime")>now()<#elseif (tableCarray.carrayName_x == "deleted")>0<#else>?</#if></#list>)";
         UUIDUtil.setId(entity);
         dataCenter.insert(sql, sqlParam(<#list tableCarrays as tableCarray><#if (tableCarray.carrayName_x == "updateUser")><#if (!tableCarray?is_first)>, </#if>entity.getCreateUser()<#elseif (tableCarray.carrayName_x != "createTime" && tableCarray.carrayName_x != "updateTime" && tableCarray.carrayName_x != "deleted")><#if (!tableCarray?is_first)>, </#if>entity.get${tableCarray.carrayName_d}()</#if></#list>));
-        return new ResultWrapper(entity.getId());
+        return entity.getId();
     }
 
     @Override
@@ -54,7 +56,7 @@ public class ${className_d}ServiceImpl implements ${className_d}Service {
             </#list>
         }
         dataCenter.insert(sql, params);
-        return new ResultWrapper(ids);
+        return ids;
     }
 
     @Override
